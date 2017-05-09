@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Add Terms and Definitions</title>
+  <title>Study Guide</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="FlashcardFunctions.js"></script>
@@ -34,46 +34,59 @@
   </nav>
   <br><br>
   <div class="container-fluid">
-    <h1 class=headerStyle> Create Flashcards </h1>
+    <h1 class=headerStyle> Create Study Guide </h1>
 
     <div>
       <div class="welcomeMessage">
-        <p class="introBottomText"> Here you will quiz yourself on your knowledge of the
-          terms given one of the definitions from the vocab list.  Once you think that
-          you know the term, press the "Reveal Term" button below to see if you were
-          correct or not.  Once you are done with that term/defintion, press the arrow
-          to move on to the next defintion.
+        <p class="introBottomText"> Here you will be able to look over the terms
+          and definitions that you added on the previous page.  This is a great way to
+          evaluate what terms you are familiar with as well as ones you may need to improve on.
+          Start by clicking the "Create Study Guide" button below to create a study guide
+          that will help you learn your terms and definitions. After you are done looking over
+          all of the terms and definitions, choose one of the buttons below to test
+          your knowledge of the vocabulary.
         </p>
+      </div>
 
-        <div class="bordered">
-          <p id="showingDefinition">
-
-          </p>
+      <div style="width: 60%" class="welcomeMessage">
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+            <button type="button" class="btn btn-success btn-lg text-center"
+            style="text-align: center" onclick="createStudyGuide()">
+              Create Study Guide
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <br>
 
-    <div style="width: 60%" class="welcomeMessage">
-      <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10">
-            <button type="button" class="btn btn-primary btn-lg text-center" style="text-align: center"
-            onclick="">
-              < Previous Definition
-            </button>
+    <div class="container-fluid">
+      <div>
+        <div class="welcomeMessage">
+          <div class="introBottomText">
+            <div style="float: left; width: 50%">
+              <h3 style="color: blue"> <b><u>Terms</u></b> </h3>
+              <p id="studyGuideTerms">
 
-            <button type="button" class="btn btn-success btn-lg text-center"
-            style="text-align: center" onclick="">
-              Reveal Term
-            </button>
+              </p>
+            </div>
 
-            <button type="button" class="btn btn-primary btn-lg text-center" style="text-align: center"
-            onclick="">
-              Next Definition >
-            </button>
+            <div style="float: right; width: 50%;">
+              <h3 style="color: blue"> <b><u>Definitions</b></u> </h3>
+              <p id="studyGuideDefs">
+
+              </p>
+            </div>
           </div>
+        </div>
       </div>
     </div>
+
+
+  </div>
+    <br>
+
+
   </div>
   <br><br><br>
 </body>
