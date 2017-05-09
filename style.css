@@ -1,1 +1,65 @@
 /* By: Ryan Ripperger */
+.nav-tab{
+  width: 20%;
+  float: left;
+  background-color: #808080;
+  color: #2B4C7E;
+  display: block;
+  font-size: 1.5em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-size: 150%;
+  text-align: center;
+}
+
+.nav-tab:hover{
+  background-color: lightgrey;/*#F38630;*/
+  color: #F38630;
+}
+
+.navigation {
+  color: #2B4C7E;
+}
+
+.welcomeMessage{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.headerStyle
+{
+  font-size: 250%;
+  text-align: center;
+  color: Red;
+}
+
+.introTopText
+{
+  font-size: 200%;
+}
+
+.introBottomText
+{
+  font-size: 150%;
+}
+
+.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.bordered {
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 650px;
+    height: 450px;
+    padding: 20px;
+    border: 10px groove royalblue;
+    justify-content: center;
+  }

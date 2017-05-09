@@ -2,11 +2,82 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Homepage</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title> Homepage </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="FlashcardFunctions.js"></script>
 </head>
 
 <body lang="en-US">
+  <nav>
+      <div style="width: 100">
+        <div class="nav-tab">
+          <a class="navigation" href="index.html"> Home </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="addTerms.html"> Add Terms and Definition </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="guessDefinition.html"> Guess the Definition </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="guessTerm.html"> Guess the Term </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="matching.html"> Matching </a>
+        </div>
+      </div>
+  </nav>
+  <br><br>
+  <div class="container-fluid">
+    <h1 class=headerStyle> Welcome! </h1>
+
+    <div>
+      <div class="welcomeMessage">
+        <div class="introBottomText">
+          <p> Welcome to the Flash Card Pro!  This website is designed to help you learn
+            your vocabulary terms as fast as possible.  Start by entering in both the
+            vocabulary word as well as the correstponding definition.  Once you created them,
+            the website will store the values and you wil be able to quiz yourself in
+            different ways depending on how you learn best.  Start by clicking the button below
+            and adding your terms and definition to begin!
+          </p>
+
+          <div>
+            <h2 style="color:blue">The Competition (The Bad Guys) </h2>
+            <div style="float: left; width: 50%">
+              <img src=https://qph.ec.quoracdn.net/main-qimg-5e955f740f95bc65bc0de7e23170e70f alt="Quizlet Logo" style="width:200px; height:150px">
+	          </div>
+            <div style="float: right; width: 50%">
+              <img src=http://blogs.oregonstate.edu/inspire/files/2013/11/cram.png alt="Cram Logo" style="width:200px; height:150px">
+	          </div>
+          </div>
+          <p>
+            Before you ask, yes, i know.  There are <i><u>other</u></i> sites out there where
+            you can create flashcards and quiz yourself.  These are sites such as:
+            <a href="http://www.cram.com/">Cram.com</a> or <a href="https://quizlet.com/">Quizlet.com</a>
+            (Don't you DARE follow those links!).  But what people don't understand is that these websites are <i> too </i>
+            good.  These groups have a monopoly on the online flashcard-creating
+            business.  They don't give other independent developers a shot at making
+            a good website because they steal all the web traffic.  But nonetheless,
+            my website is way better because I made this website with love (and a lot of time).
+          </p>
+        </div>
+    <br><br><br><br>
+
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+          <button type="button" class="btn btn-primary btn-lg btn-block text-center" style="text-align: center"
+          onclick=location.href="addTerms.html";>
+            Start Studying!
+          </button>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
 </body>
 </html>

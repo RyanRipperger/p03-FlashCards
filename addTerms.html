@@ -1,0 +1,92 @@
+<!-- By: Ryan Ripperger -->
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Add Terms and Definitions</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="FlashcardFunctions.js"></script>
+</head>
+
+<body lang="en-US">
+  <nav>
+      <div style="width: 100">
+        <div class="nav-tab">
+          <a class="navigation" href="index.html"> Home </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="addTerms.html"> Add Terms and Definitions </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="guessDefinition.html"> Guess the Definition </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="guessTerm.html"> Guess the Term </a>
+        </div>
+
+        <div class="nav-tab">
+          <a class="navigation" href="matching.html"> Matching </a>
+        </div>
+      </div>
+  </nav>
+  <br><br>
+  <div class="container-fluid">
+    <h1 class=headerStyle> Create Flashcards </h1>
+
+    <div>
+      <div class="welcomeMessage">
+        <p class="introBottomText"> Here you will add the terms and defintions that will be used
+          in the site.  The terms and definitions will be stored so you can use any
+          of the available games to get more familiar with your vocabulary.
+        </p>
+      </div>
+    </div>
+    <br>
+
+    <form class="text-center">
+      <div class="form-group col-md-6">
+        <label for="formGroupExampleInput">Term</label>
+        <input type="text" class="form-control" id="addTerm" placeholder="Add Term Here">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="formGroupExampleInput2">Definition</label>
+        <input type="text" class="form-control" id="addDefinition" placeholder="Add Definition Here">
+      </div>
+    </form>
+
+    <div style="width: 60%" class="welcomeMessage">
+      <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-success btn-lg text-center"
+            style="text-align: center" onclick="addToObject()">
+              Add
+            </button>
+          </div>
+      </div>
+    </div>
+
+    <div style="clear:both">
+    </div>
+
+    <br><br>
+
+    <div class="container-fluid">
+      <div class="text-center"
+        <div class="welcomeMessage">
+          <div class="introBottomText">
+            <p id="listDisplay">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <br><br><br>
+</body>
+</html>
