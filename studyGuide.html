@@ -1,5 +1,5 @@
 <!-- By: Ryan Ripperger -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Study Guide</title>
@@ -52,7 +52,7 @@
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10">
             <button type="button" class="btn btn-success btn-lg text-center"
-            style="text-align: center" onclick="createStudyGuide()">
+            style="text-align: center" onclick="addToTable()">
               Create Study Guide
             </button>
           </div>
@@ -60,34 +60,22 @@
       </div>
     </div>
 
+    <br><br><br><br>
+
     <div class="container-fluid">
       <div>
-        <div class="welcomeMessage">
-          <div class="introBottomText">
-            <div style="float: left; width: 50%">
-              <h3 style="color: blue"> <b><u>Terms</u></b> </h3>
-              <p id="studyGuideTerms">
-
-              </p>
-            </div>
-
-            <div style="float: right; width: 50%;">
-              <h3 style="color: blue"> <b><u>Definitions</b></u> </h3>
-              <p id="studyGuideDefs">
-
-              </p>
-            </div>
-          </div>
+        <div class="tableFormat">
+          <table id="studyGuideTable" style=" align: center; border: 1px solid grey" >
+            <tr>
+              <th style="font-size: 130%"><b><u>Terms</b></u></td>
+              <th style="font-size: 130%"><b><u>Definitions</b></u></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
+</div>
 
-
-  </div>
-    <br>
-
-
-  </div>
-  <br><br><br>
+<br><br><br>
 </body>
 </html>

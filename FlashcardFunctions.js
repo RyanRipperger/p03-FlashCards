@@ -3,42 +3,13 @@ var TermStorage = [];
 var DefStorage = [];
 var newVocab;
 var buttonClick = false;
+var counter = 0;
+
 
 function Vocab (term, def){
     this.word = term;
     this.meaning = def;
 }
-
-/*
-function addToObject()
-{
-  //Retrieve the values entered by the User
-  var term = document.getElementById("addTerm").value;
-  var def = document.getElementById("addDefinition").value;
-
-  //var defName = document.createTextNode("Definition = " + def);
-
-  newVocab = new Vocab(term, def);
-  localStorage.setItem("test", JSON.stringify(newVocab));
-  var test = localStorage.getItem("test");
-  test = JSON.parse(test);
-  VocabStorage.push(newVocab);
-
-
-  newVocab = new Vocab(term, def);
-  VocabStorage.push(newVocab);
-
-  var list = document.getElementById("listDisplay");
-  var item = document.createElement("P");
-  var itemName = document.createTextNode(VocabStorage.length + ") Term = " + term + " | \r\nDefinition = " + def);
-  item.appendChild(itemName);
-  list.appendChild(item);
-
-  console.log(VocabStorage.length + " test");
-  document.getElementById("addTerm").value = "";
-  document.getElementById("addDefinition").value = "";
-}
-*/
 
 function addToObject()
 {
@@ -71,37 +42,91 @@ function addToObject()
   //sessionStorage.DefStorage = JSON.stringify("meanings");
 }
 
-function createStudyGuide()
+function addToTable()
 {
-  //Retrieve the term/def arrays stored in session sessionStorage
+  //Retrive the values of the array stored in sessionStorage
   var storedTerms = JSON.parse(sessionStorage.getItem("words"));
   var storedDefs = JSON.parse(sessionStorage.getItem("meanings"));
-  console.log(storedTerms);
-  console.log(storedDefs);
 
+  //Creates an off switch when the table is created to eliminate duplicating
   if (buttonClick == false) {
       alert("Creating Study Guide!");
       buttonClick = true;
-  }
-
-  else {
+    } else {
       return;
   }
 
+  //create a table where the study guide will be stored
+  var table = document.getElementById("studyGuideTable");
+
   for (var i = 0; i < storedTerms.length; i++)
   {
-    var sgTerms = document.getElementById("studyGuideTerms");
-    var sgDefs = document.getElementById("studyGuideDefs")
-    var item1 = document.createElement("P");
-    var item2 = document.createElement("P");
-    var itemName = document.createTextNode((i+1) + " - " + storedTerms[i]);
-    var itemDef = document.createTextNode((i+1) + " - " + storedDefs[i]);
-    item1.appendChild(itemName);
-    item2.appendChild(itemDef);
-    sgTerms.appendChild(item1);
-    sgDefs.appendChild(item2);
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = storedTerms[i];
+    cell2.innerHTML = storedDefs[i];
   }
 }
+
+function nextTerm()
+{
+  //Retrive the values of the array stored in sessionStorage
+  var storedTerms = JSON.parse(sessionStorage.getItem("words"));
+  var storedDefs = JSON.parse(sessionStorage.getItem("meanings"));
+
+  var randomValue = Math.floor(Math.random()*storedTerms.length);
+
+  while(randomValue == counter){
+    var randomValue = Math.floor(Math.random()*storedTerms.length);
+  }
+
+  counter = randomValue;
+  document.getElementById("showingDefinition").innerHTML = storedTerms[counter];
+  document.getElementById("title").innerHTML = "Term: \n\n";
+}
+
+function nextDef()
+{
+  //Retrive the values of the array stored in sessionStorage
+  var storedTerms = JSON.parse(sessionStorage.getItem("words"));
+  var storedDefs = JSON.parse(sessionStorage.getItem("meanings"));
+
+  var randomValue = Math.floor(Math.random()*storedTerms.length);
+
+  while(randomValue == counter){
+    var randomValue = Math.floor(Math.random()*storedTerms.length);
+  }
+
+  counter = randomValue;
+  document.getElementById("showingDefinition").innerHTML = storedDefs[counter];
+  document.getElementById("title").innerHTML = "Definition: \n\n";
+
+}
+
+function revealDef()
+{
+  //Retrive the values of the array stored in sessionStorage
+  var storedTerms = JSON.parse(sessionStorage.getItem("words"));
+  var storedDefs = JSON.parse(sessionStorage.getItem("meanings"));
+
+  document.getElementById("showingDefinition").innerHTML = storedDefs[counter];
+  document.getElementById("title").innerHTML = "Definition: \n\n";
+
+}
+
+function revealTerm()
+{
+  //Retrive the values of the array stored in sessionStorage
+  var storedTerms = JSON.parse(sessionStorage.getItem("words"));
+  var storedDefs = JSON.parse(sessionStorage.getItem("meanings"));
+
+  document.getElementById("showingDefinition").innerHTML = storedTerms[counter];
+    document.getElementById("title").innerHTML = "Term: \n\n";
+
+}
+
+
 function validateTerm()
 {
   var termInput = document.getElementById("addTerm").value;
@@ -176,3 +201,73 @@ function validateDef()
     //Toggle off error message
   }
 }
+
+//This is the trashbin for all the unused code
+/*
+function addToObject()
+{
+  //Retrieve the values entered by the User
+  var term = document.getElementById("addTerm").value;
+  var def = document.getElementById("addDefinition").value;
+
+  //var defName = document.createTextNode("Definition = " + def);
+
+  newVocab = new Vocab(term, def);
+  localStorage.setItem("test", JSON.stringify(newVocab));
+  var test = localStorage.getItem("test");
+  test = JSON.parse(test);
+  VocabStorage.push(newVocab);
+
+
+  newVocab = new Vocab(term, def);
+  VocabStorage.push(newVocab);
+
+  var list = document.getElementById("listDisplay");
+  var item = document.createElement("P");
+  var itemName = document.createTextNode(VocabStorage.length + ") Term = " + term + " | \r\nDefinition = " + def);
+  item.appendChild(itemName);
+  list.appendChild(item);
+
+  console.log(VocabStorage.length + " test");
+  document.getElementById("addTerm").value = "";
+  document.getElementById("addDefinition").value = "";
+}
+
+function createStudyGuide()
+{
+  //Retrieve the term/def arrays stored in session sessionStorage
+  var storedTerms = JSON.parse(sessionStorage.getItem("words"));
+  var storedDefs = JSON.parse(sessionStorage.getItem("meanings"));
+  console.log(storedTerms);
+  console.log(storedDefs);
+
+  if (buttonClick == false) {
+      alert("Creating Study Guide!");
+      buttonClick = true;
+  }
+
+  else {
+      return;
+  }
+
+  for (var i = 0; i < storedTerms.length; i++)
+  {
+    var sgTerms = document.getElementById("studyGuideTerms");
+    var sgDefs = document.getElementById("studyGuideDefs")
+    var item1 = document.createElement("td");
+    var item2 = document.createElement("td");
+    var itemName = document.createTextNode((i+1) + " - " + storedTerms[i]);
+    var itemDef = document.createTextNode((i+1) + " - " + storedDefs[i]);
+    item1.appendChild(itemName);
+    item2.appendChild(itemDef);
+    sgTerms.appendChild(item1);
+    sgDefs.appendChild(item2);
+  }
+}
+
+Here you will quiz yourself on your knowledge of the
+  terms given one of the definitions from the vocab list.  Once you think that
+  you know the term, press the "Reveal Term" button below to see if you were
+  correct or not.  Once you are done with that term/defintion, press the arrow
+  to move on to the next defintion.
+*/

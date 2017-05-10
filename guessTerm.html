@@ -2,13 +2,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Add Terms and Definitions</title>
+  <title>Guess the Term</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="FlashcardFunctions.js"></script>
 </head>
 
-<body lang="en-US">
+<body lang="en-US" onload="revealDef()">
   <nav>
       <div style="width: 100">
         <div class="nav-tab">
@@ -30,11 +30,10 @@
         <div class="nav-tab">
           <a class="navigation" href="guessTerm.html"> Guess the Term </a>
         </div>
-      </div>
   </nav>
   <br><br>
   <div class="container-fluid">
-    <h1 class=headerStyle> Create Flashcards </h1>
+    <h1 class=headerStyle> Guess the Term </h1>
 
     <div>
       <div class="welcomeMessage">
@@ -46,9 +45,11 @@
         </p>
 
         <div class="bordered">
-          <p id="showingDefinition">
+          <h1 id="title"> </h1>
 
-          </p>
+          <h1 id="showingDefinition">
+
+          </h1>
         </div>
       </div>
     </div>
@@ -56,24 +57,29 @@
 
     <div style="width: 60%" class="welcomeMessage">
       <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-10">
-            <button type="button" class="btn btn-primary btn-lg text-center" style="text-align: center"
-            onclick="">
-              < Previous Definition
-            </button>
+        <div class="col-sm-offset-1 col-sm-10">
+          <button type="button" class="btn btn-success btn-lg text-center"
+          style="text-align: center" onclick="revealTerm()">
+            Reveal Term
+          </button>
 
-            <button type="button" class="btn btn-success btn-lg text-center"
-            style="text-align: center" onclick="">
-              Reveal Term
-            </button>
-
-            <button type="button" class="btn btn-primary btn-lg text-center" style="text-align: center"
-            onclick="">
-              Next Definition >
-            </button>
-          </div>
+          <button type="button" class="btn btn-success btn-lg text-center"
+          style="text-align: center" onclick="revealDef()">
+            Reveal Definition
+          </button>
+        </div>
       </div>
     </div>
+    <br><br>
+    <div style="width: 60%" class="welcomeMessage">
+      <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+          <button type="button" class="btn btn-primary btn-lg text-center"
+          style="text-align: center" onclick="nextDef()">
+            Next Def >
+          </button>
+        </div>
+      </div>
   </div>
   <br><br><br>
 </body>

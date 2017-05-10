@@ -3,7 +3,7 @@
   width: 20%;
   float: left;
   background-color: #808080;
-  color: #2B4C7E;
+  color: #428bca;
   display: block;
   font-size: 1.5em;
   margin-left: 0;
@@ -15,7 +15,7 @@
 
 .nav-tab:hover{
   background-color: lightgrey;/*#F38630;*/
-  color: #F38630;
+  color: #428bca;
 }
 
 .navigation {
@@ -29,6 +29,11 @@
   width: 60%;
 }
 
+.tableFormat{
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
 .headerStyle
 {
   font-size: 250%;
@@ -43,7 +48,7 @@
 
 .introBottomText
 {
-  font-size: 150%;
+  font-size: 130%;
 }
 
 .center {
@@ -67,6 +72,30 @@
 span.hidden-message{
   opacity: 0.0;
 }
+
 span.shown-message{
   opacity: 1.0;
+}
+
+table, th, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+}
+
+th {
+    background-color: #428bca;
+    color: white;
+    border-bottom: 1px solid grey;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#title{
+  font-weight: bold;
 }
